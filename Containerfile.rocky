@@ -8,7 +8,7 @@ LABEL "io.containers.capabilities"="CHOWN,DAC_OVERRIDE,FOWNER,FSETID,KILL,NET_BI
 
 RUN dnf -y update && \
   rpm --setcaps shadow-utils 2>/dev/null && \
-  dnf -y install buildah fuse-overlayfs podman nodejs git --exclude container-selinux && \
+  dnf -y install buildah fuse-overlayfs podman nodejs git python3 python3-pip --exclude container-selinux && \
   dnf -y clean all && \
   rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
